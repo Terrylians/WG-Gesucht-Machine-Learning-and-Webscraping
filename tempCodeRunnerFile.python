@@ -1,0 +1,12 @@
+import sqlite3
+import sys
+
+conn=sqlite3.connect('WG_Gesucht.db')
+c=conn.cursor()
+
+c.execute('SELECT * FROM WG_Gesucht WHERE Price > 500 AND Price < 1000')
+rows=c.fetchall()
+for row in rows:
+    print(row)
+
+conn.close()
